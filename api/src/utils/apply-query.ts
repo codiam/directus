@@ -561,6 +561,13 @@ export function applyFilter(
 			if (operator == '_nintersects_bbox') {
 				dbQuery[logical].whereRaw(helpers.st.nintersects_bbox(key, compareValue));
 			}
+
+			if (operator == '_within') {
+				const geojson = compareValue.geom;
+				const distance = compareValue.distance;
+
+				dbQuery[logical].whereRaw(helpers.st.within(key, geojson, distance));
+			}
 		}
 
 		function getWhereColumn(path: string[], collection: string) {

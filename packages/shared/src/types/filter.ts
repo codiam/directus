@@ -57,6 +57,7 @@ export type FieldFilterOperator = {
 	_nintersects?: string;
 	_intersects_bbox?: string;
 	_nintersects_bbox?: string;
+	_within?: string;
 };
 
 export type FieldValidationOperator = {

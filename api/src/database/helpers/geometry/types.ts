@@ -43,6 +43,14 @@ export abstract class GeometryHelper extends DatabaseHelper {
 	intersects_bbox(key: string, geojson: GeoJSONGeometry): Knex.Raw {
 		return this.isTrue(this._intersects_bbox(key, geojson));
 	}
+	within(key: string, geojson: GeoJSONGeometry, distance: number | string = 100): Knex.Raw {
+		const geometry = this.fromGeoJSON(geojson);
+		return this.knex.raw('st_dwithin(ST_Transform(??, 4326)::geography, ST_Transform(?, 4326)::geography, ?)', [
+			key,
+			geometry,
+			distance,
+		]);
+	}
 	nintersects_bbox(key: string, geojson: GeoJSONGeometry): Knex.Raw {
 		return this.isFalse(this._intersects_bbox(key, geojson));
 	}
