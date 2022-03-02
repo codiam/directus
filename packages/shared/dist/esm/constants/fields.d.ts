@@ -1,0 +1,5 @@
+export declare const TYPES: readonly ["alias", "bigInteger", "boolean", "date", "dateTime", "decimal", "float", "integer", "json", "string", "text", "time", "timestamp", "binary", "uuid", "hash", "csv", "geometry", "geometry.Point", "geometry.LineString", "geometry.Polygon", "geometry.MultiPoint", "geometry.MultiLineString", "geometry.MultiPolygon", "unknown"];
+export declare const GEOMETRY_TYPES: readonly ["Point", "LineString", "Polygon", "MultiPoint", "MultiLineString", "MultiPolygon"];
+export declare const GEOMETRY_FORMATS: readonly ["native", "geojson", "wkt", "lnglat"];
+export declare const LOCAL_TYPES: readonly ["standard", "file", "files", "m2o", "o2m", "m2m", "m2a", "presentation", "translations", "group"];
+//# sourceMappingURL=fields.d.ts.map
